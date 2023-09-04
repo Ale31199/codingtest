@@ -1,0 +1,100 @@
+
+body{
+  background-color: rgb(20, 20, 20);
+  margin-left: 600px;
+  margin-right: 600px;
+  color: white;
+}
+
+@media (max-width:1000px){
+  body{
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+.app{
+display: flex;
+flex-direction: column;
+justify-content: start;
+align-items: center;
+background-color: transparent;
+width: auto;
+height: 300px;
+position: relative;
+top: 50px;
+}
+
+
+.inputbox{
+  position: relative;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 130px;
+  justify-content: start;
+  align-items: start;
+  gap: 25px;
+  background-color: transparent;
+  width: auto;
+  border: solid 1px white;
+}
+
+.input1{
+width: 260px;
+padding: 5px;
+outline: none;
+}
+
+
+.input2{
+  padding-bottom: 50px;
+  width: 266px;
+  outline: none;
+}
+
+
+.postbox{
+  background-color: rgba(255, 255, 255, 0);
+  width: 650px;
+  height: auto;
+  align-items: start;
+  display: block;
+  justify-content: start;
+  margin-bottom: 70px;
+  border: solid 1px white;
+  border-left: 0;
+  border-right: 0;
+}
+
+.titlebox{
+  background-color: rgb(112, 112, 112);
+  width: auto;
+  height: 50px;
+  position: relative;
+  top: -20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.textbox{
+  background-color: rgb(54, 54, 54);
+  width: auto;
+  height: 140px;
+}
+
+.button{
+  cursor: pointer;
+}
+
+
+
+
+.text,
+.title{
+  color: white;
+  cursor: default;
+}
+
+
