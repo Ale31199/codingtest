@@ -50,7 +50,7 @@ if (event.key === 'Enter'){
 
   return (
   <div>  
-   <h1>Achievements List</h1>
+   <h1>Achievements Lista</h1>
 
 
    <input 
