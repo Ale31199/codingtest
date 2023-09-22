@@ -17,12 +17,12 @@ const register=()=>{
     } else if(pass.length === 0){
         alert('Password required')
     } else {
-        const url = 'http://localhost:3000/src/test5.php';
-       let data = new FormData();
-       data.append('email', email);
-       data.append('user', user);
-       data.append('pass', pass);
-       axios.post(url, data) .then(response=> alert(response.data)) .catch(error=>alert(error));
+        const url = 'http://localhost/src/test5.php';
+       let fdata = new FormData();
+       fdata.append('email', email);
+       fdata.append('user', user);
+       fdata.append('pass', pass);
+       axios.post(url, fdata) .then(response=> alert(response.data)) .catch(error=>alert(error));
     }
 }
 
@@ -38,13 +38,13 @@ if (event.key === 'Enter'){
 
 
     <label>*Email:</label>
-<input type='email' name='email' onChange={(e)=>{setEmail(e.target.value)}}></input>
+<input type='email' value={email} onChange={(e)=>setEmail(e.target.value)}></input>
 
 <label>*Username:</label>
-<input type='text' name='username' onChange={(e)=>{setUser(e.target.value)}}></input>
+<input type='text' value={user} onChange={(e)=>setUser(e.target.value)}></input>
 
     <label>*Password:</label>
-<input type='password' name='password' onChange={(e)=>{setPass(e.target.value)}}></input>
+<input type='password' value={pass} onChange={(e)=>setPass(e.target.value)}></input>
 
 <button onClick={register} onKeyPress={ent}>Register</button>
 

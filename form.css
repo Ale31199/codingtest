@@ -1,0 +1,7 @@
+.msg {
+    padding: 10px; /* Aggiungi spaziatura interna in tutti i lati */
+    width: 380px; /* Larghezza massima per adattarsi al contenitore */
+    display: block; /* Utilizza display: block per il campo di input */
+    text-align: left; /* Allineamento del testo a sinistra */
+    height: 200px;
+}

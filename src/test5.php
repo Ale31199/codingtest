@@ -1,67 +1,6 @@
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<form action=test5.php method="post">
- <h1>Insert your data here:</h1>
-
- <p>Email:</p>
-<input type="email" name="email">
-
-<p>Username:</p>
-<input type="text"  name="username">
-
-<p>Password:</p>
-<input type="password"  name="password">
-
-<input type="submit" value="Send Data">
-
-<p name='id'></p>
-</form>
-
-
-
-
-</body>
-</html>
--->
-
 <?php
-/*
-$servername = "127.0.0.1";
-$username = "alessio";
-$password = "caccamella.31199";
-$dbname = "test";
 
-
-$srv = new mysqli($servername, $username, $password, $dbname);
-$srv->close();
-
-
-if ($_SERVER["REQUEST_METHOD" == "POST"]){
-$email = $_POST['email']; 
-$user = $_POST['username'];  
-$pass = $_POST['password']; 
-
-$sql = "INSERT INTO testtable(Email, Username, Password) VALUES ('$email', '$user', '$pass')";
-}
-
-
-
-echo "Keep you data safe!<br><br>";
-echo " Your Email is: $email <br>";
-echo "Your Username is: $user <br>";
-echo "Your Password is: $pass <br>";
-
-*/
-
-header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Origin: *');
 
 
 $servername = "127.0.0.1";
