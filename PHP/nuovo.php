@@ -6,15 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="nuovo.php" method="post">
-      Email:<br>
-      <input name="email" type="email"><br>
-      Name:<br>
-      <input name="name" type="text"><br>
-      Password:<br>
-      <input name="pass" type="password"><br><br>
-      <input value="register" type="submit">
-    </form>
+    
+<form action="nuovo.php" method="post">
+ Email:<br>
+ <input type="email" name="email"><br>
+Username:<br>
+<input type="text" name="user"><br>
+Password:<br>
+<input type="password" name="pass"><br><br>
+
+<input type="submit" value="register"><br>
+</form>
+
 
 
 
@@ -25,41 +28,42 @@
 
 
 
+
+
 <?php
 
-$servername = '127.0.0.1';
-$username = 'alessio';
-$password = 'caccamella.31199';
-$dbname = 'test';
+$servername= '127.0.0.1';
+$username= 'alessio';
+$password='caccamella.31199';
+$dbname='finale';
+
 
 
 $sql = new mysqli($servername, $username, $password, $dbname);
 
-if ($sql -> connect_error){
-    die('Error' . $sql->connect_error);
-};
-
-
-if ($_SERVER['REQUEST_METHOD' === 'POST']){
-    $email = $_POST['email'];
-    $name = $_POST['name'];
-    $pass  = $_POST['pass'];
-    $id = rand(0, 99999999);
-
-    if(empty($email) || empty($name) || empty($pass)){
-        echo 'Please insert the data';
-    } else {
-        $srv = "INSERT INTO testtable (Email, Username, Password, Id) VALUES ('$email', '$name', '$pass', '$id')";
-    };
-
-    if($sql-> query($srv) === TRUE){
-        echo 'data sent successfully';
-    } else {
-        echo 'Error during sending data';
-    }
+if($sql -> connect_error){
+    die('Error connecting' .$sql -> connect_error);
+} else{
+    echo '';
 }
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $email  = $_POST['email'];
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+    $id = rand(0, 99999999);
 
+    if(empty($email) || empty( $user) || empty($pass)){
+        echo 'please insert the data';
+    } else {
+       $srv = "INSERT INTO finaletest (Email, Username, Password, Id) VALUES ('$email', '$user', '$pass', '$id')";
+    }
 
+    if ($sql -> query($srv) === TRUE){
+   echo 'Data sent successfully to the Database';
+    } else {
+        echo 'Error while sending data, please retry.';
+    }
+}
 ?>
