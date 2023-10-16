@@ -6,64 +6,52 @@
     <title>Document</title>
 </head>
 <body>
-    
-<form action="nuovo.php" method="post">
- Email:<br>
- <input type="email" name="email"><br>
-Username:<br>
-<input type="text" name="user"><br>
-Password:<br>
-<input type="password" name="pass"><br><br>
+    <form action="nuovo.php" method="post">
+        email:<br>
+        <input name="email" type="email"><br>
+        username:<br>
+        <input name="user" type="text"><br>
+        password:<br>
+        <input name="pass" type="password"><br>
+        <input value="register now" type="submit"><br><br><br>
 
-<input type="submit" value="register"><br>
-</form>
-
-
-
-
-
-
+    </form>
 </body>
 </html>
 
 
-
-
-
 <?php
 
-$servername= '127.0.0.1';
+$servername = '127.0.0.1';
 $username= 'alessio';
-$password='caccamella.31199';
+$password ='caccamella.31199';
 $dbname='finale';
-
-
 
 $sql = new mysqli($servername, $username, $password, $dbname);
 
-if($sql -> connect_error){
-    die('Error connecting' .$sql -> connect_error);
-} else{
-    echo '';
-}
+if ($sql-> connect_error){
+    die('error connecting' . $sql ->connect_error);
+};
 
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $email  = $_POST['email'];
-    $user = $_POST['user'];
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $email = $_POST['email'];
+    $user= $_POST['user'];
     $pass = $_POST['pass'];
-    $id = rand(0, 99999999);
+    $id = rand(0,99999999);
 
-    if(empty($email) || empty( $user) || empty($pass)){
-        echo 'please insert the data';
+    if (empty($email) || empty($user)|| empty($pass)){
+        echo 'please fill the data form';
     } else {
-       $srv = "INSERT INTO finaletest (Email, Username, Password, Id) VALUES ('$email', '$user', '$pass', '$id')";
-    }
+        $srv = "INSERT INTO finaletest (Email, Username, Password, Id) VALUES ('$email', '$user', '$pass', '$id')";
+    };
 
-    if ($sql -> query($srv) === TRUE){
-   echo 'Data sent successfully to the Database';
+    if ($sql ->query($srv)=== TRUE){
+        echo 'data sent successfully';
     } else {
-        echo 'Error while sending data, please retry.';
+        echo 'Error sending data, retry';
     }
 }
+
+
+
 ?>
