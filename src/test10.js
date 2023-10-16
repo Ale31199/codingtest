@@ -3,16 +3,22 @@ import './App.css';
 
 export default function Sudoku() {
   const [qt, setqt]=useState(0)
-  const count = 0
+  const [pr, setpr]=useState(134)
 
   const qtchange=(event)=>{
-  setqt(event.target.value)
+    const takeqt= parseInt(event.target.value)
+  setqt(takeqt)
+  if(takeqt === 1){
+  setpr(134 * 1)
+  }else if (takeqt === 2){
+    setpr(134 * 2)
+  }
   }
   
  
   return (
-    <div>
-       <select onChange={qtchange}>
+    <div onChange={qtchange}>
+       <select>
         <option value={1}>1</option>
         <option value={2}>2</option>
        </select>
@@ -20,6 +26,7 @@ export default function Sudoku() {
 
 
        <p>qt selected: {qt}</p>
+       <p>price: {pr}</p>
     </div>
 
     
